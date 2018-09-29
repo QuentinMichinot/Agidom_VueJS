@@ -1,11 +1,12 @@
 <template>
   <div class="card">
-    <h1>{{ title }}</h1>
     <div class="add_car">
       <label for="itemFrom">Lien d'image</label>
       <input type="text" id="itemFormSrc" v-on:keypress.enter="addItem">
+      <br>
       <label for="itemFormName">Nom</label>
       <input type="text" id="itemFormName" v-on:keypress.enter="addItem">
+      <br>
       <button v-on:click="addItem">Ajouter</button>
     </div>
 
@@ -50,9 +51,20 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-  .add_car {
-    margin-bottom: 50px;
+  .card {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
   }
+
+  .add_car {
+    position: absolute;
+    right: 0;
+    background-color: white;
+    padding: 50px;
+    top: 0;
+  }
+
   .polaroid-images {
     a {
       background: white;
