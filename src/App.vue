@@ -1,16 +1,19 @@
 <template>
   <div id="app">
+    <FormCard/>
     <card/>
   </div>
 </template>
 
 <script>
 import Card from './components/card'
+import FormCard from './components/formcard'
 
 export default {
   name: 'App',
   components: {
-    Card
+    Card,
+    FormCard,
   }
 }
 </script>
