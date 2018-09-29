@@ -1,9 +1,17 @@
 <template>
   <div class="card">
     <h1>{{ title }}</h1>
-    <div class="polaroid-images">
-      <a href="" title="Quentin">
-        <img height="200" src="https://raw.githubusercontent.com/Ashwinvalento/cartoon-avatar/master/lib/images/male/45.png" alt="Quentin" title="Quentin" />
+    <div class="add_car">
+      <label for="itemFrom">Lien d'image</label>
+      <input type="text" id="itemFormSrc" v-on:keypress.enter="addItem">
+      <label for="itemFormName">Nom</label>
+      <input type="text" id="itemFormName" v-on:keypress.enter="addItem">
+      <button v-on:click="addItem">Ajouter</button>
+    </div>
+
+    <div class="polaroid-images" v-for="item in items">
+      <a href="" v-bind:title="item.name">
+        <img height="200" v-bind:src="item.image" alt="" title="" />
       </a>
     </div>
   </div>
@@ -14,13 +22,37 @@ export default {
   name: 'Card',
   data () {
     return {
-      title: 'Agidom'
+      title: 'Agidom',
+      items: [
+        {
+          image: 'https://raw.githubusercontent.com/Ashwinvalento/cartoon-avatar/master/lib/images/male/45.png',
+          name: 'Quentin'
+        },
+      ]
+    }
+  },
+  methods: {
+    addItem: function() {
+      var inputSrc = document.getElementById('itemFormSrc');
+      var inputName = document.getElementById('itemFormName');
+
+      if (inputSrc.value !== "" && inputName.value !== "") {
+        this.items.push({
+          image: inputSrc.value,
+          name: inputName.value
+        })
+        inputSrc.value = '';
+        inputName.value = '';
+      }
     }
   }
 }
 </script>
 
 <style lang="scss" scoped>
+  .add_car {
+    margin-bottom: 50px;
+  }
   .polaroid-images {
     a {
       background: white;
