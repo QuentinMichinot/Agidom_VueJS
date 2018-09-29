@@ -18,22 +18,22 @@ export default {
         {
           image: 'https://raw.githubusercontent.com/Ashwinvalento/cartoon-avatar/master/lib/images/male/45.png',
           name: 'Quentin'
-        },
+        }
       ]
     }
   },
   methods: {
-    addItem: function() {
-      var inputSrc = document.getElementById('itemFormSrc');
-      var inputName = document.getElementById('itemFormName');
+    addItem: function () {
+      var inputSrc = document.getElementById('itemFormSrc')
+      var inputName = document.getElementById('itemFormName')
 
-      if (inputSrc.value !== "" && inputName.value !== "") {
+      if (inputSrc.value !== '' && inputName.value !== '') {
         this.items.push({
           image: inputSrc.value,
           name: inputName.value
         })
-        inputSrc.value = '';
-        inputName.value = '';
+        inputSrc.value = ''
+        inputName.value = ''
       }
     }
   }
@@ -75,20 +75,20 @@ export default {
         transform: translateX(-50%);
       }
       &:nth-child(2n) {
-        -webkit-transform: rotate(4deg);  
-        -moz-transform: rotate(4deg); 
-        transform: rotate(4deg); 
+        -webkit-transform: rotate(4deg);
+        -moz-transform: rotate(4deg);
+        transform: rotate(4deg);
       }
       &:nth-child(3n) {
-        -webkit-transform: rotate(-24deg);  
-        -moz-transform: rotate(-24deg); 
-        transform: rotate(-24deg); 
+        -webkit-transform: rotate(-24deg);
+        -moz-transform: rotate(-24deg);
+        transform: rotate(-24deg);
       }
       &:hover{
-        -webkit-transform: rotate(0deg); 
+        -webkit-transform: rotate(0deg);
         -moz-transform: rotate(0deg);
         transform: rotate(0deg);
-        -webkit-transform: scale(1.2); 
+        -webkit-transform: scale(1.2);
         -moz-transform: scale(1.2);
         transform: scale(1.2);
         z-index:10;
@@ -99,8 +99,8 @@ export default {
     }
 
     .img {
-      display: block; 
-      width: inherit; 
+      display: block;
+      width: inherit;
     }
   }
 
