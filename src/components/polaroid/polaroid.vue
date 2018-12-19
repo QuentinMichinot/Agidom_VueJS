@@ -55,13 +55,13 @@ export default {
     }
   },
   mounted () {
-    // this.video = this.$refs.video
-    // if (navigator.mediaDevices && navigator.mediaDevices.getUserMedia) {
-    //   navigator.mediaDevices.getUserMedia({ video: true }).then(stream => {
-    //     this.video.src = window.URL.createObjectURL(stream)
-    //     this.video.play()
-    //   })
-    // }
+    this.video = this.$refs.video
+    if (navigator.mediaDevices && navigator.mediaDevices.getUserMedia) {
+      navigator.mediaDevices.getUserMedia({ video: true }).then(stream => {
+        this.video.src = window.URL.createObjectURL(stream)
+        this.video.play()
+      })
+    }
   },
   methods: {
     addCapture (event) {
