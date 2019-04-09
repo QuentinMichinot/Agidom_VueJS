@@ -14,10 +14,10 @@
 </template>
 
 <script>
-import Card from './components/card/card'
-import Cards from './components/card/cards'
+import Card from './components/card/Card'
+import Cards from './components/card/Cards'
 import Polaroid from './components/polaroid/polaroid'
-import FormCard from './components/FormCard/formcard'
+import FormCard from './components/FormCard/FormCard'
 
 export default {
   name: 'App',
