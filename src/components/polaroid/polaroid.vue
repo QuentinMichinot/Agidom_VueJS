@@ -66,7 +66,7 @@ export default {
   methods: {
     addCapture (event) {
       this.canvas = this.$refs.canvas
-      var context = this.canvas.getContext('2d').drawImage(this.video, 0, 0, 640, 480)
+      // var context = this.canvas.getContext('2d').drawImage(this.video, 0, 0, 640, 480)
       this.captures.push({
         url: this.canvas.toDataURL('image/png'),
         name: this.nameCapture

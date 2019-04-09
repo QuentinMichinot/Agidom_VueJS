@@ -1,7 +1,8 @@
 <template>
   <div class="card">
-    <a href="#" :title="name">
-      <img style="width: 200px;" :src="url" alt="">
+    <a href :title="name">
+      <img class="card-img" :src="url" alt>
+      <span>{{name}}</span>
     </a>
   </div>
 </template>
@@ -11,11 +12,13 @@ export default {
   data () {
     return {
       index: 0,
-      cards: [],
-      name: []
+      cards: []
     }
   },
-  props: ['url'],
+  props: [
+    'name',
+    'url'
+  ],
   computed: {
     slidesCount () {
       return this.cards.length
@@ -24,7 +27,7 @@ export default {
   mounted () {
     this.cards = this.$children
     this.cards.forEach((card, i) => {
-      slide.index = i
+      // slide.index = i
     })
   }
 }
@@ -34,6 +37,11 @@ export default {
 .card {
   width: 100%;
   top: 30px;
+  &-img {
+    height: 150px;
+    width: 150px;
+    background-color: #333;
+  }
 }
 .card-images {
   position: relative;
